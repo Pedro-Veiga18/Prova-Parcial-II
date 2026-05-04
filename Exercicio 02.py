@@ -9,6 +9,7 @@
     -Acesse uma nova página
     -Retorne à página anteriormente visitada
     -Visualize o histórico de navegação atual
+    -Visualize quantas páginas acessou
 
     Considerando que se trata de uma versão simplificada, não será possível acessar diretamente 
     páginas específicas do histórico. 
@@ -28,6 +29,7 @@
     (1): Canvas
     (2)
     (3)
+    (4)
     
     Exemplo de Saída:
     Página atual: Youtube
@@ -38,6 +40,7 @@
     Google
     Youtube
     Menu do Vhrome
+    Você acessou, até o momento, 4 páginas
 """
 
 from collections import deque
@@ -46,12 +49,14 @@ def gerar_menu():
     print('[1] Acessar nova página')
     print('[2] Retornar à página anterior')
     print('[3] Exibir histórico')
-    print('[4] Sair')
+    print('[4] Exibir quantidade de páginas acessadas')
+    print('[5] Sair')
 
 def main():
     historico = deque()
     pagina_inicial = 'Menu do Vhrome'
     historico.append(pagina_inicial)
+    qtd_paginas = 1
     
     while True:
         gerar_menu()
@@ -65,6 +70,7 @@ def main():
             case 1:
                 pagina_nova = input('Insira o nome da página que voce quer acessar: ')
                 historico.append(pagina_nova)
+                qtd_paginas += 1
              
             case 2:
                 if len(historico) <= 1:
@@ -80,9 +86,14 @@ def main():
                 for i in range(len(historico) -1, -1, -1):
                     print(historico[i])
                 print()
-            
+                
             case 4:
-                print('Obrigado por usar nosso navegador')
+                print()
+                print(f"Você acessou, até o momento, {qtd_paginas} páginas")
+                print()
+            
+            case 5:
+                print('Obrigado por usar Vhrome')
                 break
             
             case _:

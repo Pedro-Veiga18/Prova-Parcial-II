@@ -1,5 +1,6 @@
 """ 
-    Uma empresa de delivery, chamada Vfood, está desenvolvendo um sistema para gerenciar os pedidos realizados pelos clientes.
+    Uma empresa de delivery, chamada Vfood, está desenvolvendo um sistema para gerenciar os pedidos 
+    realizados pelos clientes.
     Nesse sistema, os pedidos são processados na ordem em que chegam, ou seja, 
     o primeiro pedido realizado deve ser o primeiro a ser atendido.
 
